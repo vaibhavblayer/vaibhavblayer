@@ -9,7 +9,8 @@ let h;
 
 let angle = 30;
 function setup() {
-  let canvas = createCanvas(1200, 1200, WEBGL);
+    b = windowWidth;
+    h = windowHeight;
   let canvas = createCanvas(b, h, WEBGL);
   angleMode(DEGREES);
   pixelDensity(2);
