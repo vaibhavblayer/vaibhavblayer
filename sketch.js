@@ -4,10 +4,13 @@ let numFrames = 10*60;
 let capture;
 let lowerLimit;
 let upperLimit;
+let b;
+let h;
 
 let angle = 30;
 function setup() {
   let canvas = createCanvas(1200, 1200, WEBGL);
+  let canvas = createCanvas(b, h, WEBGL);
   angleMode(DEGREES);
   pixelDensity(2);
   frameRate(30);
@@ -20,14 +23,14 @@ function setup() {
       name: 'frames'
   });
 
-  lowerLimit = createSlider(-360,360,-360,1);
-  lowerLimit.position(240, 1100);
-  lowerLimit.style('width', '720px');
+  lowerLimit = createSlider(-360,360,-270,1);
+  lowerLimit.position(20, h - 80);
+  lowerLimit.style('width', b -40 +'px');
 
 
-  upperLimit = createSlider(-360,360,360,1);
-  upperLimit.position(240, 1150);
-  upperLimit.style('width', '720px');
+  upperLimit = createSlider(-360,360,270,1);
+  upperLimit.position(20, h - 50);
+  upperLimit.style('width', b - 40 + 'px');
 
 
 
@@ -63,8 +66,8 @@ function draw() {
   //rotateZ(angle);
   //rotateX(-angle);
   //rotateY(angle);
-  line(-450, 0, 450, 0);
-  line(0,-450,0,450);
+  line(-(b/2) + 20, 0, b/2 - 20, 0);
+  line(0,-(h/2) + 20,0,h/2-20);
 
 
 
